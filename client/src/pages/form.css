@@ -1,0 +1,40 @@
+.heading{
+    text-align: center;
+    margin-bottom:50px;
+    margin-top: 20px;
+    font-size:20px;
+    font-weight: 700;
+}
+
+.form
+{
+    margin-left:40%;
+    width: 100%;
+}
+
+.label{
+    font-size:15px;
+    display: inline-block;
+    width:200px;
+    text-align: justify;
+
+}
+
+.input{
+    border: 1px solid ;
+    padding:2px;
+  
+}
+
+
+.button{
+    background-color: darkgray;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: small;
+    border: 0.5px solid;
+}
+
+button:hover{
+    background-color:rgb(98, 98, 98);
+}
