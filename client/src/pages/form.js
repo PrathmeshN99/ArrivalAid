@@ -35,7 +35,7 @@ const Form = () => {
     }
    
    
-     navigate("/map");
+     navigate("/excel");
   
   }
 
@@ -50,7 +50,7 @@ const Form = () => {
   return (
     <div>
       <h1 className='heading'>Form page</h1>
-      <div className='container'>
+      <div>
       <form className='form' id='userform' name='userform' onSubmit={handleSubmit}>
         <label  className='label'>Full Name: </label>
         <input type='text' className='input' name="Full_name"  onChange={handleChange}/><br/>
