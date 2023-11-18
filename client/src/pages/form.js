@@ -2,10 +2,11 @@ import React from 'react'
 import { useState } from 'react';
 import './form.css'
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
   const [userdata,setData]=useState({Full_name:"",city:"",gender:"",age:"",occupation:"",pref:""});
+  const navigate=useNavigate();
 
 
   function handleSubmit(e)
@@ -22,7 +23,7 @@ const Form = () => {
           Full_name:userdata.Full_name,
           city:userdata.city,
           gender:userdata.gender,
-          age:userdata.city,
+          age:userdata.age,
           occupation:userdata.occupation,
           pref:userdata.pref
         }
@@ -34,8 +35,8 @@ const Form = () => {
     }
    
    
-
-    //  console.log(data)
+     navigate("/map");
+  
   }
 
 
@@ -49,6 +50,7 @@ const Form = () => {
   return (
     <div>
       <h1 className='heading'>Form page</h1>
+      <div className='container'>
       <form className='form' id='userform' name='userform' onSubmit={handleSubmit}>
         <label  className='label'>Full Name: </label>
         <input type='text' className='input' name="Full_name"  onChange={handleChange}/><br/>
@@ -65,10 +67,11 @@ const Form = () => {
         <label className='label'>Occupation: </label>
         <input type='text' className='input' name='occupation' onChange={handleChange}/><br/>
 
-        <label className='label'>Describe your preferences for house?</label><br/>
-         <textarea rows="7" cols="40" className='input' method="post"  name='pref' onChange={handleChange}></textarea><br/>
+        <label className='label'>Describe your preferences:</label><br/>
+         <textarea rows="6" cols="45" className='input' method="post"  name='pref' onChange={handleChange}></textarea><br/>
         <input type='submit' value='submit' className='button'></input>
       </form>
+      </div>
     
     </div>
   )

@@ -11,7 +11,7 @@ app.use(bodyparser.json());
 app.use(cors());
 
 
-console.log(user);
+
 
 
 app.get("/",function(req,res){
@@ -20,17 +20,20 @@ app.get("/",function(req,res){
 
 app.post("/",function(req,res)
 {
-    
+      
+
     const newUser=new user({
        name:req.body.Full_name,
        city:req.body.city,
        gender:req.body.gender,
-       age:req.body.age,
+       age:parseInt(req.body.age),
        occupation:req.body.occupation,
        preference:req.body.pref
     })
     
     newUser.save();
+    console.log("new user added")
+
    
 })
 app.listen(5000,function(req,res){
