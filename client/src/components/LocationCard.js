@@ -1,5 +1,7 @@
 import React from 'react'
 import houseimg from '../images/house.jpg'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function LocationCard(props) {
    
@@ -8,8 +10,13 @@ export default function LocationCard(props) {
     ["1","Neutral"],
     ["2","Not Likable"]
    ])
-
-//    console.log(cluster.get(String(props.data.Cluster)))
+    //  console.log(props.data.Apartment_Longitude)
+    const navigation=useNavigate()
+function handleClick()
+{
+    navigation("/map",{state:{lat:props.data.Apartment_Latitude,lon:props.data.Apartment_Longitude}})
+     
+}
   return (
     <div className=' w-fit border border-gray-900 p-5 rounded-lg shadow-xl m-5 hover:cursor-pointer'>
         <div className=' flex flex-col justify-center'>
@@ -64,6 +71,7 @@ export default function LocationCard(props) {
                      </div>
                 </span> 
                 </div>
+                <button onClick={()=> handleClick()}>Show on maps</button>
             </div>
             </div>
          

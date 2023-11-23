@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import ReactMapGl from 'react-map-gl';
+import ReactMapGl, { Marker } from 'react-map-gl';
 import "mapbox-gl/dist/mapbox-gl.css"
 import { useLocation } from 'react-router-dom';
 
@@ -7,20 +7,24 @@ const Token="pk.eyJ1Ijoic2FtZWVyNSIsImEiOiJjbGV2YnYxbWQwbXQ2M3Zta2tvM3ByMjdoIn0.
 const Map = () => {
   const location=useLocation();
   
-  const [userdata,setUserData]=useState(null);
+ const [lat,setLat]=useState(null);
+ const [lon,setLon]=useState(null);
   useEffect(() => {
       // Ensure location.state.loc is not null before calling setUserData
-      if (location.state && location.state.loc) {
-        setUserData(location.state.loc);
+      if (location.state && location.state.lat && location.state.lon) {
+        setLat(location.state.lat);
+        setLon(location.state.lon);
+
         
       }
     }, [location.state]); 
 
-   console.log(userdata);
+   console.log(lat);
+   console.log(lon)
  
   
 
-  const [viewport,setViewPort]=useState({latitude:18.4690,longitude:73.8641})
+  const [viewport,setViewPort]=useState({latitude:18.4690,longitude:73.8641,zoom:11})
   return (
     <div style={{width:"100vw",height:"100vh"}}>
          <ReactMapGl
@@ -28,8 +32,23 @@ const Map = () => {
          mapboxAccessToken={Token}
          width="100%"
          height="100%"
-         zoom={11}
          mapStyle='mapbox://styles/mapbox/streets-v12'>
+
+          {lat&&lon?(
+          <>
+           
+          <Marker
+           latitude={lat}
+           longitude={lon}
+           offsetLeft={-3.5*viewport.zoom}
+           offsetTop={-7*viewport.zoom}
+           >
+
+          </Marker>
+          
+          </>)
+          
+          :null}
     </ReactMapGl>
     </div>
   )
