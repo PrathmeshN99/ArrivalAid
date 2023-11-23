@@ -3,7 +3,9 @@ import './home.css'
 import bk from '../images/bk.jpg'
 
 
+
 const Home = () => {
+
   return (
 
     <div>

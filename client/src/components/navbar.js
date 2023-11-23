@@ -9,7 +9,7 @@ const Navbar = () => {
     <div>
       <div className='container'>
       <div className='navbar'>
-         <div className='text-2xl'>Arrival Aid</div>
+         <div className='text-xl font-semibold'>Arrival Aid</div>
          <Link to='/'>
          <div className='text-xl'>Home</div> 
          </Link>
@@ -18,6 +18,9 @@ const Navbar = () => {
          </Link>
          <Link to='/form'>
         <div className='text-xl'>Form</div> 
+        </Link>
+        <Link to='/showlocation'>
+        <div className='text-xl'>Places</div> 
         </Link>
         </div>
         <div className='text-xl pr-3'>Login</div>

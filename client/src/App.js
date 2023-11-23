@@ -6,6 +6,8 @@ import Form from "./pages/form";
 import Navbar from './components/navbar';
 import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Excel from './pages/excel';
+import UserLocation from './pages/userLocation';
+import Showlocation from './pages/showlocation';
 
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="/map" element={<Map/>}/>
         <Route path="/form" element={<Form/>}/>
         <Route path="/excel" element={<Excel/>}/>
+        <Route path ="/userLocation" element={<UserLocation/>}/>
+        <Route path="/ShowLocation" element={<Showlocation/>}/>
       </Routes> 
   
     
