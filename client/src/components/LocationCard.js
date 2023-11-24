@@ -6,9 +6,9 @@ import { useNavigate } from 'react-router-dom'
 export default function LocationCard(props) {
    
    const cluster=new Map([
-    ["0","Most Likable"],
+    ["0","Most Suitable"],
     ["1","Neutral"],
-    ["2","Not Likable"]
+    ["2","Not Suitable"]
    ])
     //  console.log(props.data.Apartment_Longitude)
     const navigation=useNavigate()
@@ -71,7 +71,7 @@ function handleClick()
                      </div>
                 </span> 
                 </div>
-                <button onClick={()=> handleClick()}>Show on maps</button>
+                <button onClick={()=> handleClick()} className='w-fit  h-fit border p-2 rounded-2xl border-slate-700 bg-sky-400 text-white font-md hover:bg-sky-600'>Show on maps</button>
             </div>
             </div>
          

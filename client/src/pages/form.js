@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Form = () => {
-  const [userdata,setData]=useState({Full_name:"",city:"",gender:"",age:0,occupation:"",area:"",pref:""});
+  const [userdata,setData]=useState({Full_name:"",city:"",gender:"",age:0,occupation:"",budget:0,area:"",pref:""});
   const navigate=useNavigate();
 
 
@@ -25,6 +25,7 @@ const Form = () => {
           gender:userdata.gender,
           age:userdata.age,
           occupation:userdata.occupation,
+          budget:userdata.budget,
           area:userdata.area,
           pref:userdata.pref
         }
@@ -35,7 +36,7 @@ const Form = () => {
       console.log(err);
     }
    
-   
+     
      navigate("/ShowLocation");
   
   }
@@ -50,8 +51,8 @@ const Form = () => {
     
   }
   return (
-    <div>
-      <h1 className='heading'>Form page</h1>
+    <div className='mainContainer'>
+      <h1 className='heading'>Kindly fill the form</h1>
       <div>
       <form className='form' id='userform' name='userform' onSubmit={handleSubmit}>
         <label  className='label'>Full Name: </label>
@@ -68,6 +69,9 @@ const Form = () => {
 
         <label className='label'>Occupation: </label>
         <input type='text' className='input' name='occupation' onChange={handleChange}/><br/>
+
+        <label className='label'>Budget permonth(Rs): </label>
+        <input type='text' className='input' name='Budget' onChange={handleChange}/><br/>
         
         <label className='label'>Area :</label><br/>
         <input type='radio' name='area' id='Western' onChange={handleChange}/>
@@ -79,13 +83,13 @@ const Form = () => {
         <input type='radio' name='area' id='Eastern' onChange={handleChange}/>
         <label for="area4" className='p-2'>Eastern</label>
         <input type='radio' name='area' id='Southern' onChange={handleChange}/>
-        <label for="area5" className='p-2'>Southern</label><br/>
+        <label for="area5" className='p-2'>Southern</label><br/><br/>
         
         
 
         <label className='label'>Describe your preferences:</label><br/>
-         <textarea rows="6" cols="45" className='input' method="post"  name='pref' onChange={handleChange}></textarea><br/>
-        <input type='submit' value='submit' className='button'></input>
+         <textarea rows="6" cols="48" className='input' method="post"  name='pref' onChange={handleChange}></textarea><br/>
+        <input type='submit' value='Submit' className='button'></input>
       </form>
       </div>
     

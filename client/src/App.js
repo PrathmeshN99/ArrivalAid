@@ -8,6 +8,9 @@ import { BrowserRouter,Route,Routes } from 'react-router-dom';
 import Excel from './pages/excel';
 import UserLocation from './pages/userLocation';
 import Showlocation from './pages/showlocation';
+import UserFeedback from './pages/userFeedback';
+import BusinessFom from './pages/businessForm';
+import BusinessForm from './pages/businessForm';
 
 
 function App() {
@@ -22,6 +25,8 @@ function App() {
         <Route path="/excel" element={<Excel/>}/>
         <Route path ="/userLocation" element={<UserLocation/>}/>
         <Route path="/ShowLocation" element={<Showlocation/>}/>
+        <Route path="/userFeedback" element={<UserFeedback/>}/>
+        <Route path='/businessForm' element={<BusinessForm/>}/>
       </Routes> 
   
     

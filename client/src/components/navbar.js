@@ -8,22 +8,24 @@ const Navbar = () => {
  <>
     <div>
       <div className='container'>
-      <div className='navbar'>
          <div className='text-xl font-semibold'>Arrival Aid</div>
+      <div className='navbar'>
          <Link to='/'>
-         <div className='text-xl'>Home</div> 
+         <div className='text-xl hover:font-semibold'>Home</div> 
          </Link>
          <Link to='/map'>
-         <div className='text-xl'>Map</div> 
+         <div className='text-xl hover:font-semibold'>Map</div> 
          </Link>
          <Link to='/form'>
-        <div className='text-xl'>Form</div> 
+        <div className='text-xl hover:font-semibold'>Form</div> 
         </Link>
         <Link to='/showlocation'>
-        <div className='text-xl'>Places</div> 
+        <div className='text-xl hover:font-semibold'>Places</div> 
+        </Link>
+        <Link to='/businessForm'>
+        <div className='text-xl hover:font-semibold'>Businessform</div> 
         </Link>
         </div>
-        <div className='text-xl pr-3'>Login</div>
         </div>
     </div>
   
